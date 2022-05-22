@@ -16,8 +16,6 @@ async function index() {
   await waitFor(1500);
   // await chrome.get("https://www.google.com/maps");
   await driver.get("https://www.google.com/maps/dir///@44.9763834,-93.2797639,11.97z/data=!4m2!4m1!3e0?hl=en");
-  // direct directions URL:
-  // "https://www.google.com/maps/dir///@44.9763834,-93.2797639,11.97z/data=!4m2!4m1!3e0?hl=en"
 
   // const input = await chrome.findElement(By.css("input#searchboxinput"));
   const startingPointWebElement = await driver.findElement(By.css('input[aria-label="Choose starting point, or click on the map..."]'));
