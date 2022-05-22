@@ -10,6 +10,8 @@ const { Builder, By, Key } = require("selenium-webdriver");
 const startingPoint = process.env["starting_point"];
 const destination = process.env["destination"];
 
+index();
+
 async function index() {
   const driver = await new Builder().forBrowser("chrome").build();
 
@@ -26,7 +28,7 @@ async function index() {
   await waitFor(1500);
   await destinationWebElement.sendKeys(destination);
 
-  await waitFor(1500);
+  await waitFor(1000);
 
   // EITHER THIS:
   await destinationWebElement.sendKeys(Key.ENTER);
@@ -46,9 +48,6 @@ async function index() {
 
   // await waitFor(1500);
 }
-
-index();
-
 
 function waitFor(milliseconds) {
   return new Promise(function (resolve) {
